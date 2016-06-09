@@ -1,0 +1,22 @@
+.wrap {
+  width: 90%;
+  margin: auto; }
+
+header {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  border-bottom: solid black 5px;
+  background-image: url(../img/small_steps.png);
+  margin-bottom: 80px;
+  min-height: 350px; }
+  header .textcenter .h1, header h1 {
+    font-size: 3.5em; }
+  header .subHeader p {
+    font-size: 0.5em; }
+
+.navbar-inverse {
+  background-color: #AEEA00;
+  border: none;
+  border-bottom: solid black 5px; }
+  .navbar-inverse .navbar-nav li > a, .navbar-inverse .navbar-brand {
+    color: black; }

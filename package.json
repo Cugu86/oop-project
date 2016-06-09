@@ -1,0 +1,16 @@
+{
+  "name": "oop_project",
+  "version": "1.0.0",
+  "description": "Project to understand OOP basics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marco",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.1"
+  }
+}

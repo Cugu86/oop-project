@@ -1,0 +1,33 @@
+$mainColor : #AEEA00;
+$fontColor: black;
+
+
+.wrap{
+	width: 90%;
+	margin:auto;
+}
+
+header {
+	padding-top: 100px;
+	padding-bottom: 80px;
+	border-bottom: solid black 5px;
+	background-image: url(../img/small_steps.png);
+	margin-bottom: 80px;
+	min-height: 350px;
+	.textcenter .h1, h1{
+		font-size: 3.5em;
+	}
+	.subHeader p{
+		font-size: 0.5em;
+	}
+}
+
+.navbar-inverse{
+	background-color: $mainColor;
+	border: none;
+	border-bottom: solid black 5px;
+	.navbar-nav li > a , .navbar-brand{
+		color: $fontColor;
+	}  
+}
+
