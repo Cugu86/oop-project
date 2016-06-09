@@ -1,6 +1,9 @@
 $mainColor : #AEEA00;
 $fontColor: black;
 
+a{
+	color: $fontColor;
+}
 
 .wrap{
 	width: 90%;
@@ -17,8 +20,10 @@ header {
 	.textcenter .h1, h1{
 		font-size: 3.5em;
 	}
-	.subHeader p{
-		font-size: 0.5em;
+	p{
+		font-size: 1.5em;
+		padding: 30px 0px 30px 0px;
+		width: 80%;
 	}
 }
 
@@ -30,4 +35,66 @@ header {
 		color: $fontColor;
 	}  
 }
+
+.login{
+	padding-bottom: 40px;
+	.sectionTitle{
+		padding-bottom: 20px;
+	}
+}
+
+footer{
+	border-top: solid black 5px;
+	background-color: $mainColor; 
+	h3{
+		padding: 20px 0px 20px 0px;
+	}
+	ul{
+		padding: 0px;
+	}
+	li{
+		list-style-type: none;	
+		padding: 5px 0px 5px 0px;
+
+		a:hover{
+			text-decoration: none;
+			color: white;
+		}
+	}
+	.footerBottom{
+		background-color: black;
+		padding: 20px; 
+		margin-top: 40px;
+		.copyright{
+			color: white;
+		}
+	}
+	.social{
+		a{
+			:hover{
+				color: white;
+				text-decoration: none;
+			}
+			i{
+				padding: 0px 8px 0px 8px;
+			}
+		}
+	}
+	hr{
+		border-bottom: solid black 3px;
+		color: black;
+	}
+}
+
+.store{
+	min-height: 60px;
+	padding-bottom: 40px;
+	.welcomeMessage{
+		font-size: 1.5em;
+	}
+	.sectionTitle{
+		padding-bottom: 40px;
+	}
+}
+
 

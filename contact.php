@@ -14,6 +14,7 @@ session_start();
 
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
   <!-- Custom -->
   <link href="css/style.css" rel="stylesheet">
 
@@ -35,11 +36,13 @@ session_start();
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php">BuyMe!</a>
+        <a class="navbar-brand" href="">BuyMe!</a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
+        <?php if(!isset($_SESSION['customer'])):  ?>
           <li><a href="index.php">Home</a></li>
+          <?php endif;  ?>
           <li><a href="store.php">Store</a></li>
           <li class="active" ><a href="contact.php">Contact</a></li>
            <?php if(!empty($_SESSION['customer'])):  ?>
@@ -50,18 +53,11 @@ session_start();
     </div>
   </nav>
 
-
-  <header class=" header " >
-    <h1 class=" text-center" > Contact Page </h1>
-
-    
-  </header>
-
   <section class=" wrap contactPage"  >
    
   </section>
 
-
+<?php include('parts/footer.php') ?>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->

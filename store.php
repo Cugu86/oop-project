@@ -14,6 +14,7 @@ session_start();
 
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
   <!-- Custom -->
   <link href="css/style.css" rel="stylesheet">
 
@@ -35,11 +36,13 @@ session_start();
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php">BuyMe!</a>
+        <a class="navbar-brand" href="">BuyMe!</a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
+          <?php if(!isset($_SESSION['customer'])):  ?>
           <li><a href="index.php">Home</a></li>
+          <?php endif;  ?>
           <li class="active" ><a href="store.php">Store</a></li>
           <li><a href="contact.php">Contact</a></li>
            <?php if(!empty($_SESSION['customer'])):  ?>
@@ -51,13 +54,12 @@ session_start();
   </nav>
 
 
-  <header class=" header " >
-    <h1 class=" text-center" > <?php if(isset($_SESSION['welcomeMessage'])) echo $_SESSION['welcomeMessage'] ?> </h1>
-    <h2 class=" text-center" >List Of Products</h2>
-    
+  <header class=" header store " >
+    <h1 class=" text-center welcomeMessage " > <?php if(isset($_SESSION['welcomeMessage'])) echo $_SESSION['welcomeMessage'] ?> </h1>
   </header>
 
   <section class=" wrap store"  >
+  <h2 class=" text-center sectionTitle " >List Of Products</h2>
     <table class="table table-striped">
       <tr>
       <th><span>Product id</span></th>
@@ -76,7 +78,7 @@ session_start();
     </table>
   </section>
 
-
+<?php include('parts/footer.php') ?>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->

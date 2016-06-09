@@ -1,5 +1,4 @@
 <?php
-
 include_once('classAutoloader.php');
 session_start();
 
@@ -15,6 +14,7 @@ session_start();
 
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
   <!-- Custom -->
   <link href="css/style.css" rel="stylesheet">
 
@@ -27,127 +27,114 @@ session_start();
 </head>
 <body>
 
- <?php include('parts/nav.php'); ?>
+  <?php include('parts/nav.php'); ?>
 
   <header class=" header  " >
     <div class="wrap" >
-      
-    
 
-    <?php if(isset($_SESSION['messageMail']) and (!isset($_SESSION['customer']))  ): ?>
-        
-    <h3 class='text-center' > ! <?php echo $_SESSION['messageMail']?> !</h3>
-    <?php endif;?>
+      <?php if(isset($_SESSION['messageMail']) and (!isset($_SESSION['customer']))  ): ?>
 
-    <h1>Welcome <span class="subHeader" > 
-     <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam condimentum lectus eget convallis pharetra. In hac habitasse platea dictumst. Nunc hendrerit eget lectus eget aliquet.</p>
-     </span>
+        <h3 class='text-center' > ! <?php echo $_SESSION['messageMail']?> !</h3>
+      <?php endif;?>
+
+      <h1>Welcome </h1> 
+      <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam condimentum lectus eget convallis pharetra. In hac habitasse platea dictumst. Nunc hendrerit eget lectus eget aliquet.</p>
+
+    </div>
+  </header>
+
+  <div class="wrap" >
 
     <?php if(isset($_SESSION['customer'])  ): ?>
 
-   
-        
-     <?php   echo $_SESSION['customer']->getName();?>
+      <?php   echo " <h3> Welcome". $_SESSION['customer']->getName() ."</h3>" ;?>
 
-     
-
-  
-     <h4>Carry on to store</h4>
-      <a href="store.php">  <button type="button" class="btn btn-primary"  >  Store </button>
-
-    <?php else : ?> </h1>
-
+      <h4>Carry on to store</h4>
+      <a href="store.php">  <button type="button" class="btn btn-primary"  >  Store </button></a>
+      <?php else : ?> 
       </div>
-  </header>
+      <section class="login wrap "  >
+        <h3 class=" text-center sectionTitle ">Sign In and buy my products</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <h4 class="text-center" >Login</h4>
+            <form class="form-horizontal" action="login.php" method="post" >
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default">Sign in</button>
+                </div>
+              </div>
+            </form>
 
-  <section class="login wrap "  >
-  
-   <h3 class=" text-center">Sign In and buy my products</h3>
-  
-    <div class="row">
-      <div class="col-md-6">
-
-        <h4 class="text-center" >Login</h4>
-
-        <form class="form-horizontal" action="login.php" method="post" >
-          <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-            </div>
-          </div>
- 
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-default">Sign in</button>
-            </div>
-          </div>
-        </form>
-
-      </div>
-
-      <div class="col-md-6">
-
-        <h4 class="text-center" > Sign up  </h4>
-
-        <form class="form-horizontal" action="signUp.php" method="post" >
-          <div class="form-group">
-            <label for="inputName" class="col-sm-2 control-label">Name</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control"  name="inputName" placeholder="Name" required >
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputSurname" class="col-sm-2 control-label">Surname</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" name="inputSurname" placeholder="Surname" required >
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputEmail1" class="col-sm-2 control-label">Email</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" name="inputEmail" placeholder="Email" required >
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputPassword1" class="col-sm-2 control-label">Password</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" name="inputPassword" placeholder="Password" required >
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputPassword1" class="col-sm-2 control-label">Confirm Password </label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" name="inputPassword1" placeholder=" Confirm Password" required >
-            </div>
           </div>
 
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" name="sign" class="btn btn-default">Sign Up</button>
-            </div>
+          <div class="col-md-6">
+
+            <h4 class="text-center" > Sign up  </h4>
+
+            <form class="form-horizontal" action="signUp.php" method="post" >
+              <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control"  name="inputName" placeholder="Name" required >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputSurname" class="col-sm-2 control-label">Surname</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="inputSurname" placeholder="Surname" required >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail1" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" name="inputEmail" placeholder="Email" required >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword1" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" name="inputPassword" placeholder="Password" required >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword1" class="col-sm-2 control-label">Confirm Password </label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" name="inputPassword1" placeholder=" Confirm Password" required >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" name="sign" class="btn btn-default">Sign Up</button>
+                </div>
+              </div>
+            </form>
           </div>
-        </form>
         </div>
-    </div>
-      <div class="text-center" >
+        <div class="text-center" >
 
-        
-      </div>
-  </section>
-<?php endif;?>
+        </div>
+      </section>
+    <?php endif;?>
 
-<?php include('parts/footer.php') ?>
+    <?php include('parts/footer.php') ?>
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+  </html>

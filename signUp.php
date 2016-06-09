@@ -32,7 +32,7 @@ if ((!empty($_POST['inputName']))
         $prepCheck->execute();
         if($prepCheck->fetchColumn())
         {
-          $_SESSION['messageMail']="email exsist already, please choose another email or sign in";
+          $_SESSION['messageMail']="Email exsist already, please choose another email or sign in";
           echo "<script>window.top.location='index.php'</script>";
         }
         else
@@ -70,7 +70,7 @@ if ((!empty($_POST['inputName']))
 
         if ($res)
           {
-            $_SESSION['welcomeMessage']= 'Welcome '. $customer->getName().' You will shortly recieve a confirmation email';
+            $_SESSION['welcomeMessage']= 'Welcome '. $customer->getName().' you will shortly recieve a confirmation email';
             
             // Sending confrmation mail
 
