@@ -40,7 +40,7 @@ if ((!empty($_POST['inputName']))
 
         //INSERTION
 
-        $query = "INSERT INTO customer VALUES ('','$name','$surname','$email','$pw')";
+        $query = "INSERT INTO customer VALUES ('','$name','$surname','$email','$pw','')";
 
         $prep = $connection->conn->prepare($query);
         $res = $prep->execute();
