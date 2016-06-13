@@ -20,6 +20,9 @@ if ((!empty($_POST['mail_login']))&&(!empty($_POST['password_login'])))
         {
           
           echo "profile exists I get the info";
+          
+          $resOBJ = $res->fetchAll(PDO::FETCH_OBJ);
+
 
         }
      else
