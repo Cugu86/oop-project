@@ -49,13 +49,16 @@ session_start();
             <li><a href="logout.php?logout">Log Out</a></li>
           <?php endif;  ?>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="profile.php"> <?php echo $_SESSION['customer']->getName()." ".  $_SESSION['customer']->getSurname() ?> </a></li>
+        </ul>
+
       </div><!--/.nav-collapse -->
     </div>
   </nav>
 
-
   <header class=" header store " >
-    <h1 class=" text-center welcomeMessage " > <?php if(isset($_SESSION['welcomeMessage'])) echo $_SESSION['welcomeMessage'] ?> </h1>
+    <h1 class="text-center" >Store</h1>
   </header>
 
   <section class=" wrap store"  >

@@ -8,15 +8,17 @@ class Customer
   private $surname;
   private $mail;
   private $password;
+  private $role;
 
 
-  public function __construct($idCustomer, $name, $surname, $mail, $password)
+  public function __construct($idCustomer, $name, $surname, $mail, $password, $role)
   {
     $this->idCustomer = $idCustomer;
     $this->name = $name;
     $this->surname = $surname;
     $this->mail = $mail;
     $this->password = $password;
+    $this->role = $role; 
   }
 
 
@@ -79,6 +81,16 @@ class Customer
     {
         $this->password = $password;
 
+    }
+
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    public function _setRole($role)
+    {
+        $this->role = $role;
     }
 }
 

@@ -57,7 +57,8 @@ if ((!empty($_POST['inputName']))
                        $resOBJ[0]->nameCustomer,
                        $resOBJ[0]->SurnameCustomer,
                        $resOBJ[0]->mailCustomer,
-                       $resOBJ[0]->passwordCustomer);
+                       $resOBJ[0]->passwordCustomer,
+                       $resOBJ[0]->customerRole);
 
             $_SESSION['customer']=$customer;
 

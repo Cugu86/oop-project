@@ -7,29 +7,37 @@ if ((!empty($_POST['mail_login']))&&(!empty($_POST['password_login'])))
 	
 	$email = htmlspecialchars($_POST['mail_login']);
     $pw = htmlspecialchars($_POST['password_login']);
-
-    echo "input recuperati";
-
     //connection via pdo 
     $connection = new Database();
-
+    //query to get the customer infos
     $queryLogin="SELECT * FROM customer WHERE mailCustomer='$email'";
     $prepLogin = $connection->conn->prepare($queryLogin);
-    $res = $prepLogin->execute();
-    if($prepLogin->fetchColumn())
-        {
-          
-          echo "profile exists I get the info";
-          
-          $resOBJ = $res->fetchAll(PDO::FETCH_OBJ);
+    $prepLogin->execute();
+    $res = $prepLogin->fetch(PDO::FETCH_ASSOC);
+    //test if the request return something
+    if($res)
+    {
+         var_dump($res);
 
+         if($res['customerRole']='admin')
+         {
+             echo "<script>window.top.location='admin.php'</script>";
+         }
 
-        }
-     else
-     	{
-     	  echo "Profile doesn't exists";
-     	}
-
+         $customer = new Customer($res['idCustomer'],
+                                  $res['nameCustomer'],
+                                  $res['SurnameCustomer'],
+                                  $res['mailCustomer'],
+                                  $res['passwordCustomer'],
+                                  $res['customerRole']);
+         $_SESSION['customer'] = $customer;
+         echo "<script>window.top.location='store.php'</script>";
+    }
+    else
+    {
+        echo "profile doesn't exists please sign up ";
+    }
+        
 }
 else
 {
@@ -37,4 +45,4 @@ else
 
 }
 
- ?>
+?>
