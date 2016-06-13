@@ -58,15 +58,49 @@ session_start();
   </nav>
 
   <header class=" header store " >
+
     <h1 class = "text-center">Admin Area</h1>  
+
+    <hr>
+
   </header>
 
   <section class=" wrap productManager"  >
   <h2 class=" text-center sectionTitle " >Product Manager</h2>
 
-  <h3>Insert a new product</h3>
+  <h3 class="text-center" >Insert a new product</h3>
 
-  
+  <form class="form-horizontal" action="insertProduct.php" method="post" >
+    <div class="form-group">
+    <label  class="col-sm-2 control-label">Name Product</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="nameProduct" placeholder="Name Product">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Price</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" name="priceProduct" placeholder="Price">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Quantity</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" name="quantityProduct" placeholder="Quantity">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Type</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="typeProduct" placeholder="Type">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary">Insert Product</button>
+      </div>
+    </div>
+  </form>
     
   </section>
 

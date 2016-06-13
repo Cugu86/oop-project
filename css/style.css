@@ -67,3 +67,10 @@ footer {
   .store .sectionTitle {
     padding-bottom: 40px;
     color: black; }
+
+.productManager h3 {
+  padding: 20px 20px 20px 20px; }
+
+.productManager hr {
+  border-bottom: solid black 3px;
+  color: black; }
