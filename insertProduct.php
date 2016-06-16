@@ -13,7 +13,8 @@ if ((!empty($_POST['nameProduct']))&&
         $quantityProduct=htmlspecialchars($_POST['quantityProduct']);
         $typeProduct=htmlspecialchars($_POST['typeProduct']); 
         echo "valori passati";
-    
+        $prodotto = new Food('1','2','3','4','5','6','7','6','7','8','9');
+        var_dump($prodotto);    
     } 
     else
     {

@@ -70,6 +70,17 @@ session_start();
 
   <h3 class="text-center" >Insert a new product</h3>
 
+
+<div class="text-center radioButton " >
+
+ <form action="action_page.php">
+  <input type="radio" id="product_type" value='food'> Food
+  <input type="radio" id="product_type" value="elettronics"> Elettronics
+ </form>
+  
+</div>
+ 
+
   <form class="form-horizontal" action="insertProduct.php" method="post" >
     <div class="form-group">
     <label  class="col-sm-2 control-label">Name Product</label>
@@ -89,12 +100,7 @@ session_start();
         <input type="number" class="form-control" name="quantityProduct" placeholder="Quantity">
       </div>
     </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Type</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" name="typeProduct" placeholder="Type">
-      </div>
-    </div>
+
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-primary">Insert Product</button>

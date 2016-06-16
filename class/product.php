@@ -3,20 +3,22 @@
  class Product
  {
  	
- 	private $idProduct;
- 	private $nameProduct;
- 	private $priceProduct;
- 	private $typeProduct;
- 	private $quantityProduct;
+ 	protected $idProduct;
+ 	protected $nameProduct;
+ 	protected $priceProduct;
+ 	protected $typeProduct;
+ 	protected $quantityProduct;
+    protected $description;
 
 
-	public function __construct($idProduct, $nameProduct, $priceProduct, $typeProduct, $quantityProduct)
+	public function __construct($idProduct, $nameProduct, $priceProduct, $typeProduct, $quantityProduct, $description)
 	{
 		$this->idProduct = $idProduct;
 		$this->nameProduct = $nameProduct;
 		$this->priceProduct = $priceProduct;
 		$this->typeProduct = $typeProduct;
 		$this->quantityProduct = $quantityProduct;
+        $this->description = $description;
 	}
 
 
@@ -86,6 +88,20 @@
         $this->quantityProduct = $quantityProduct;
 
         
+    }
+
+   
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+   
+    private function _setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
     }
 } 
 
