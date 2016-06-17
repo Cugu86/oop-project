@@ -64,9 +64,6 @@ footer {
   padding-bottom: 40px; }
   .store .welcomeMessage {
     font-size: 1.5em; }
-  .store .sectionTitle {
-    padding-bottom: 40px;
-    color: black; }
 
 .productManager h3 {
   padding: 20px 20px 20px 20px; }
@@ -74,3 +71,17 @@ footer {
 .productManager hr {
   border-bottom: solid black 3px;
   color: black; }
+
+.productManager .btn-primary {
+  margin-top: 20px; }
+
+.radioButton {
+  padding: 30px 30px 30px 30px; }
+
+.sectionTitle {
+  padding-bottom: 40px;
+  color: black; }
+
+.col-centered {
+  float: none;
+  margin: 0 auto; }

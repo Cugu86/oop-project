@@ -17,21 +17,34 @@ if ((!empty($_POST['mail_login']))&&(!empty($_POST['password_login'])))
     //test if the request return something
     if($res)
     {
-         var_dump($res);
+         //var_dump($res);
 
-         if($res['customerRole']='admin')
-         {
-             echo "<script>window.top.location='admin.php'</script>";
-         }
+        if (password_verify($pw, $res['passwordCustomer'])) {
+            //echo 'Le mot de passe est valide !';
 
-         $customer = new Customer($res['idCustomer'],
+             $customer = new Customer($res['idCustomer'],
                                   $res['nameCustomer'],
                                   $res['SurnameCustomer'],
                                   $res['mailCustomer'],
                                   $res['passwordCustomer'],
                                   $res['customerRole']);
-         $_SESSION['customer'] = $customer;
-         echo "<script>window.top.location='store.php'</script>";
+                    $_SESSION['customer'] = $customer;
+
+            if($res['customerRole']==='admin')
+                 {
+                     echo "<script>window.top.location='admin.php'</script>";
+                 }
+                 else
+                 {
+                    
+                    echo "<script>window.top.location='store.php'</script>";
+                 }
+            
+
+        } else {
+            echo 'Le mot de passe est invalide.';
+        }
+        
     }
     else
     {

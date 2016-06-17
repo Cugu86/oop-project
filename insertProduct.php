@@ -2,6 +2,8 @@
 session_start();
 include_once("classAutoloader.php");
 
+
+
 if ((!empty($_POST['nameProduct']))&&
     (!empty($_POST['priceProduct']))&&
     (!empty($_POST['quantityProduct']))&& 
@@ -13,8 +15,16 @@ if ((!empty($_POST['nameProduct']))&&
         $quantityProduct=htmlspecialchars($_POST['quantityProduct']);
         $typeProduct=htmlspecialchars($_POST['typeProduct']); 
         echo "valori passati";
-        $prodotto = new Food('1','2','3','4','5','6','7','6','7','8','9');
-        var_dump($prodotto);    
+       
+        if ($_POST['typeProduct']='food') 
+        {
+            echo "stai inserendo un food";
+        }
+        else
+        {
+            echo "stai inserendo un elet";
+        }
+       
     } 
     else
     {

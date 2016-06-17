@@ -41,84 +41,123 @@ session_start();
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <?php if(!isset($_SESSION['customer'])):  ?>
-          <li><a href="index.php">Home</a></li>
+            <li><a href="index.php">Home</a></li>
           <?php endif;  ?>
           <li><a href="store.php">Store</a></li>
           <li><a href="contact.php">Contact</a></li>
-           <?php if(!empty($_SESSION['customer'])):  ?>
+          <?php if(!empty($_SESSION['customer'])):  ?>
             <li><a href="logout.php?logout">Log Out</a></li>
           <?php endif;  ?>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="profile.php"> <?php echo $_SESSION['customer']->getName()." ".  $_SESSION['customer']->getSurname() ?> </a></li>
-        </ul>
+          <li><a href="profile.php">
+            <?php if(!empty($_SESSION['customer'])) 
+            echo $_SESSION['customer']->getName()." ".  $_SESSION['customer']->getSurname();?> </a></li>
+          </ul>
 
-      </div><!--/.nav-collapse -->
-    </div>
-  </nav>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-  <header class=" header store " >
+    <header class=" header store " >
+      <h1 class = "text-center">Admin Area</h1>  
+      <hr>
+    </header>
 
-    <h1 class = "text-center">Admin Area</h1>  
+    <section class=" wrap productManager"  >
+      <h2 class=" text-center sectionTitle " >Product Manager</h2>
+      <h3 class="text-center" >Choose a category</h3>
+      <div class="text-center radioButton " >
+        <form action="insertProduct.php">
+          <input type="radio" id="food" name="product" value='food' onclick="productType('food');" > Food 
+          &nbsp;
+          <input type="radio" id="eletronics" name="product" value="eletronics" onclick="productType('eletronics');" > Elettronics
+        </form>
 
-    <hr>
-
-  </header>
-
-  <section class=" wrap productManager"  >
-  <h2 class=" text-center sectionTitle " >Product Manager</h2>
-
-  <h3 class="text-center" >Insert a new product</h3>
-
-
-<div class="text-center radioButton " >
-
- <form action="action_page.php">
-  <input type="radio" id="product_type" value='food'> Food
-  <input type="radio" id="product_type" value="elettronics"> Elettronics
- </form>
+      </div>
+      <div id="productInsertFood" class=" row text-center" style="display:none" >
+       <div class="col-lg-6 col-centered">
+        <h4 class="text-center sectionTitle " >Insert a product in the food category </h4>
+        <form class="form-horizontal" action="insertProduct.php" method="post" >
+          <div class="form-group">
+            <label  class="col-sm-2 control-label">Name Product</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="nameProduct" placeholder="Name Product">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Price</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" name="priceProduct" placeholder="Price">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Quantity</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" name="quantityProduct" placeholder="Quantity">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Producer</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="producersProduct" placeholder="Producers">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Expiring date</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" name="producersProduct" placeholder="Expiring date">
+            </div>
+          </div>
+            <button type="submit" class="btn btn-primary form-control">Insert Product</button>
+         
   
-</div>
  
-
-  <form class="form-horizontal" action="insertProduct.php" method="post" >
-    <div class="form-group">
-    <label  class="col-sm-2 control-label">Name Product</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" name="nameProduct" placeholder="Name Product">
+       
+          </div>
+        </form>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Price</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" name="priceProduct" placeholder="Price">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Quantity</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" name="quantityProduct" placeholder="Quantity">
-      </div>
-    </div>
 
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-primary">Insert Product</button>
+      <div id="productInsertElet" class=" row text-center" style="display:none" >
+      <div class="col-lg-6 col-centered">
+      <h4 class="text-center sectionTitle " >Insert a product in the electronic category </h4>
+        <form class="form-horizontal" action="insertProduct.php" method="post" >
+          <div class="form-group">
+            <label  class="col-sm-2 control-label">Name Product</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="nameProduct" placeholder="Name Product">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Price</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" name="priceProduct" placeholder="Price">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Quantity</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" name="quantityProduct" placeholder="Quantity">
+            </div>
+          </div>
+         <button type="submit" class="btn btn-primary form-control">Insert Product</button>
+        </form>
       </div>
-    </div>
-  </form>
-    
-  </section>
+      </div>
 
-  <section class=" wrap customerManager"  >
-  <h2 class=" text-center sectionTitle " >Customer Manager</h2>
-    
-  </section>
+    </section>
 
-<?php include('parts/footer.php') ?>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+    <section class=" wrap customerManager"  >
+      <h2 class=" text-center sectionTitle " >Customer Manager</h2>
+
+    </section>
+
+    <?php include('parts/footer.php') ?>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+
+  </body>
+  </html>

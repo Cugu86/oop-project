@@ -92,10 +92,6 @@ footer{
 	.welcomeMessage{
 		font-size: 1.5em;
 	}
-	.sectionTitle{
-		padding-bottom: 40px;
-		color: $fontColor;
-	}
 }
 
 .productManager{
@@ -106,5 +102,23 @@ footer{
 		border-bottom: solid black 3px;
 		color: black;
 	}
+	.btn-primary{
+		margin-top: 20px; 
+	}
 }
+
+.radioButton{
+	padding: 30px 30px 30px 30px;
+}
+
+.sectionTitle {
+		padding-bottom: 40px;
+		color: $fontColor;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
 

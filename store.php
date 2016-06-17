@@ -50,7 +50,10 @@ session_start();
           <?php endif;  ?>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="profile.php"> <?php echo $_SESSION['customer']->getName()." ".  $_SESSION['customer']->getSurname() ?> </a></li>
+          <li><a href="profile.php"> 
+            <?php if(!empty($_SESSION['customer'])) 
+              echo $_SESSION['customer']->getName()." ".  $_SESSION['customer']->getSurname()?></a>
+          </li>
         </ul>
 
       </div><!--/.nav-collapse -->
