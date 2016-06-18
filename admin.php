@@ -140,6 +140,18 @@ session_start();
               <input type="number" class="form-control" name="quantityProduct" placeholder="Quantity">
             </div>
           </div>
+           <div class="form-group">
+            <label class="col-sm-2 control-label">Brand</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="brandProduct" placeholder="Brand">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Watt</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="wattProduct" placeholder="Watt">
+            </div>
+          </div>
          <button type="submit" class="btn btn-primary form-control">Insert Product</button>
         </form>
       </div>
