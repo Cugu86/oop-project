@@ -1,18 +1,32 @@
 <?php 
-header('Content-Type: text/xml');
-echo "<?xml version='1.0' encoding='UTF-8' standalone='yes'  ?>";
 
-echo "<response>";
+include_once('classAutoloader.php');
 
-$mail= $_POST['mail'];
 
-$mailArray = array( 'uno', 'due', 'tre' );
-if (in_array($mail, $mailArray)) {
-	echo "La mail è stata già utilizzata!";
-else
-	echo "La mail è disponibile";
+
+if (!empty($_POST['postmail'])) {
+
+	echo "pieno";
+	$mail = htmlspecialchars($_POST['postmail']);
+
+	$connection = new Database();
+
+	$queryMail="SELECT mailCustomer FROM customer WHERE mailCustomer='$mail'";
+    $prepLogin = $connection->conn->prepare($queryLogin);
+    $prepLogin->execute();
+    $res = $prepLogin->fetch(PDO::FETCH_ASSOC);
+
+    var_dump($res);
+
+	
+}else{
+	echo "vuoto";
 }
 
-echo "</response>";
+
+
+
+
+
 
 ?>

@@ -24,9 +24,11 @@ session_start();
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src = "js/ajaxMail.js" > </script>
+ <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+
+<script type="text/javascript" src = "js/ajaxJquery.js" > </script>
 </head>
-<body onload="process();" >
+<body >
 
   <?php include('parts/nav.php'); ?>
 
@@ -86,7 +88,7 @@ session_start();
 
             <h4 class="text-center" > Sign up  </h4>
 
-            <form class="form-horizontal" action="signUp.php" method="post" >
+            <form class="form-horizontal" >
               <div class="form-group">
                 <label for="inputName" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-10">
@@ -103,8 +105,9 @@ session_start();
                 <label for="inputEmail1" class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10">
                   <input type="email" class="form-control" name="inputEmail" id="mailInput" placeholder="Email" required >
+                  <div id='underInput' class="alert alert-warning" role="alert" ></div>
                 </div  >
-                <div id='underInput' ></div>
+                
               </div>
               <div class="form-group">
                 <label for="inputPassword1" class="col-sm-2 control-label">Password</label>
@@ -121,7 +124,7 @@ session_start();
 
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" name="sign" class="btn btn-default">Sign Up</button>
+                  <button type="submit" name="sign" class="btn btn-default" onclick="process();" >Sign Up</button>
                 </div>
               </div>
             </form>
@@ -135,8 +138,7 @@ session_start();
 
     <?php include('parts/footer.php') ?>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
   </body>

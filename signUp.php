@@ -3,6 +3,30 @@ session_start();
 require_once 'vendor/swiftmailer/swiftmailer/lib/swift_required.php';
 include_once("classAutoloader.php");
 
+echo "work";
+
+if (!empty($_POST['postmail'])) {
+
+  echo "pieno";
+  $mail = htmlspecialchars($_POST['postmail']);
+
+  $connection = new Database();
+
+  $queryMail="SELECT mailCustomer FROM customer WHERE mailCustomer='$mail'";
+    $prepLogin = $connection->conn->prepare($queryLogin);
+    $prepLogin->execute();
+    $res = $prepLogin->fetch(PDO::FETCH_ASSOC);
+
+    var_dump($res);
+
+  
+}else{
+  echo "vuoto";
+}
+
+
+/*
+
 
 if ((!empty($_POST['inputName']))
   and(!empty($_POST['inputSurname']))
@@ -104,6 +128,6 @@ if ((!empty($_POST['inputName']))
 }
 
 
-
+*/
 
 
