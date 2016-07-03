@@ -82,38 +82,35 @@ session_start();
           <div class="form-group">
             <label  class="col-sm-2 control-label">Name Product</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="nameProduct" placeholder="Name Product">
+              <input type="text" class="form-control" name="nameProduct" placeholder="Name Product" required >  
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">Price</label>
             <div class="col-sm-10">
-              <input type="number" class="form-control" name="priceProduct" placeholder="Price">
+              <input type="number" class="form-control" name="priceProduct" placeholder="Price" required >
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">Quantity</label>
             <div class="col-sm-10">
-              <input type="number" class="form-control" name="quantityProduct" placeholder="Quantity">
+              <input type="number" class="form-control" name="quantityProduct" placeholder="Quantity" required >
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">Producer</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="producersProduct" placeholder="Producers">
+              <input type="text" class="form-control" name="producerProduct" placeholder="Producers" required >
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">Expiring date</label>
             <div class="col-sm-10">
-              <input type="date" class="form-control" name="producersProduct" placeholder="Expiring date">
+              <input type="date" class="form-control" name="expProduct" placeholder="Expiring date" required >
             </div>
           </div>
-            <button type="submit" class="btn btn-primary form-control">Insert Product</button>
-         
-  
- 
-       
+            <input type="hidden" name="productType" value="food">
+            <button type="submit" class="btn btn-primary form-control"  >Insert Product</button>   
           </div>
         </form>
       </div>
@@ -152,6 +149,7 @@ session_start();
               <input type="text" class="form-control" name="wattProduct" placeholder="Watt">
             </div>
           </div>
+           <input type="hidden" name="productType" value="electronics">
          <button type="submit" class="btn btn-primary form-control">Insert Product</button>
         </form>
       </div>

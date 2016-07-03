@@ -24,8 +24,9 @@ session_start();
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+<script type="text/javascript" src = "js/ajaxMail.js" > </script>
 </head>
-<body>
+<body onload="process();" >
 
   <?php include('parts/nav.php'); ?>
 
@@ -101,8 +102,9 @@ session_start();
               <div class="form-group">
                 <label for="inputEmail1" class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10">
-                  <input type="email" class="form-control" name="inputEmail" placeholder="Email" required >
-                </div>
+                  <input type="email" class="form-control" name="inputEmail" id="mailInput" placeholder="Email" required >
+                </div  >
+                <div id='underInput' ></div>
               </div>
               <div class="form-group">
                 <label for="inputPassword1" class="col-sm-2 control-label">Password</label>

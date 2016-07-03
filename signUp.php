@@ -81,7 +81,8 @@ if ((!empty($_POST['inputName']))
             $mailer = Swift_Mailer::newInstance($transport);
             $message = Swift_Message::newInstance();
             $message->setSubject('Sign Up');
-            $message->setBody('Thank you <em>very very much</em> <b>'.$customer->getName().'</b> for signing up.<br / > Go and buy something', 'text/html');
+            $message->setBody('
+              Thank you <em>very very much</em> <b>'.$customer->getName().'</b> for signing up.<br / > Go and buy something', 'text/html');
             $message->setFrom(array('lacugurra@gmail.com' => 'La Cugurra'));
             $message->setTo(array($email));
             $result = $mailer->send($message);

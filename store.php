@@ -41,18 +41,18 @@ session_start();
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <?php if(!isset($_SESSION['customer'])):  ?>
-          <li><a href="index.php">Home</a></li>
+            <li><a href="index.php">Home</a></li>
           <?php endif;  ?>
           <li class="active" ><a href="store.php">Store</a></li>
           <li><a href="contact.php">Contact</a></li>
-           <?php if(!empty($_SESSION['customer'])):  ?>
+          <?php if(!empty($_SESSION['customer'])):  ?>
             <li><a href="logout.php?logout">Log Out</a></li>
           <?php endif;  ?>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="profile.php"> 
             <?php if(!empty($_SESSION['customer'])) 
-              echo $_SESSION['customer']->getName()." ".  $_SESSION['customer']->getSurname()?></a>
+            echo $_SESSION['customer']->getName()." ".  $_SESSION['customer']->getSurname()?></a>
           </li>
         </ul>
 
@@ -64,27 +64,70 @@ session_start();
     <h1 class="text-center" >Store</h1>
   </header>
 
-  <section class=" wrap store"  >
-  <h2 class=" text-center sectionTitle " >List Of Products</h2>
-    <table class="table table-striped">
-      <tr>
-      <th><span>Product id</span></th>
-        <th>Product Name</th>
-        <th>Product Price</th>
-        <th>Quantity</th>
-      <tr>
-      
-      </tr>
-        <td>a</td>
-        <td>b</td>
-        <td>c</td>
-        <td>d</td>
 
-      </tr>
-    </table>
+  <section class=" wrap store"  >
+    <div class="row" >
+      <div class="col-md-6" >
+
+        <div class="foodSection" >
+
+          <h2 class=" text-center sectionTitle " > Food Products</h2>
+          <table class="table table-striped">
+            <tr>
+              <th><span> id</span></th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Producer</th>
+              <th>Bio</th>
+              <th>Expiring date</th>
+            </tr>
+            <tr>
+              <td>a</td>
+              <td>b</td>
+              <td>c</td>
+              <td>d</td>
+              <td>e</td>
+              <td>f</td>
+              <td>g</td>
+
+            </tr>
+          </table>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-6" >
+        <div class="electronicSection" >
+        </div>
+        <h2 class=" text-center sectionTitle " >Electronics Products</h2>
+        <table class="table table-striped">
+          <tr>
+            <th><span>id</span></th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Brand</th>
+            <th>Watt</th>
+          </tr>
+          <tr>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+            <td>d</td>
+            <td>e</td>
+            <td>f</td>
+
+          </tr>
+        </table>
+
+      </div>
+    </div>
+
   </section>
 
-<?php include('parts/footer.php') ?>
+  <?php include('parts/footer.php') ?>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
