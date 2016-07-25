@@ -1,32 +1,22 @@
 <?php 
 
-include_once('classAutoloader.php');
+header("Content-Type: xml/text");
+echo "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>";
+
+echo "<response>";
+$mail = htmlspecialchars($_GET['mail']);
+
+$arrayMail = array('uno','due','tre');
+if(in_array($mail, $arrayMail))
+{
+	echo "La Mail esiste gia";
+
+}elseif ($mail='') {
+	echo "Insert the mail";
+}else
+	echo "You can you this mail!";
 
 
-
-if (!empty($_POST['postmail'])) {
-
-	echo "pieno";
-	$mail = htmlspecialchars($_POST['postmail']);
-
-	$connection = new Database();
-
-	$queryMail="SELECT mailCustomer FROM customer WHERE mailCustomer='$mail'";
-    $prepLogin = $connection->conn->prepare($queryLogin);
-    $prepLogin->execute();
-    $res = $prepLogin->fetch(PDO::FETCH_ASSOC);
-
-    var_dump($res);
-
-	
-}else{
-	echo "vuoto";
-}
-
-
-
-
-
-
+echo "</response>";
 
 ?>

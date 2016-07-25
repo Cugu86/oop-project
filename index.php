@@ -26,9 +26,9 @@ session_start();
 <![endif]-->
  <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 
-<script type="text/javascript" src = "js/ajaxJquery.js" > </script>
+<script type="text/javascript" src = "js/ajaxMail.js" > </script>
 </head>
-<body >
+<body onload="process();" >
 
   <?php include('parts/nav.php'); ?>
 
@@ -88,7 +88,7 @@ session_start();
 
             <h4 class="text-center" > Sign up  </h4>
 
-            <form class="form-horizontal" >
+
               <div class="form-group">
                 <label for="inputName" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-10">
@@ -124,10 +124,10 @@ session_start();
 
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" name="sign" class="btn btn-default" onclick="process();" >Sign Up</button>
+                  <button type="submit" name="sign" class="btn btn-default" >Sign Up</button>
                 </div>
               </div>
-            </form>
+          
           </div>
         </div>
         <div class="text-center" >
